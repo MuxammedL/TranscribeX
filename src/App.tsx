@@ -8,17 +8,19 @@ function App() {
   const [audioStream, setAudioStream] = useState<MediaStream | null>(null)
 
   const isAudioStream = file || audioStream;
-  const handleWarnings = () => {
+
+  function handleAudioReset() {
     setFile(null)
     setAudioStream(null)
   }
+
   return (
     <div className="flex flex-col max-w-[1000px] mx-auto w-full">
-      <section className="min-h-screen flex flex-col" onClick={handleWarnings}>
+      <section className="min-h-screen flex flex-col" >
         <Header />
         {isAudioStream ?
-          <FileDisplay />
-          : <HomePage />}
+          <FileDisplay handleAudioReset={handleAudioReset} file={file} audioStream={audioStream} />
+          : <HomePage setFile={setFile} setAudioStream={setAudioStream} />}
       </section>
     </div>
   )
