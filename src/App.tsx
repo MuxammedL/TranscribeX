@@ -24,7 +24,7 @@ function App() {
   const worker = useRef<Worker | null>(null)
   useEffect(() => {
     if (!worker.current) {
-      worker.current = new Worker(new URL('./utlis/whisper.worker.ts', import.meta.url), { type: 'module' })
+      worker.current = new Worker(new URL('./utils/whisper.worker.ts', import.meta.url), { type: 'module' })
     }
 
     const onMessageReceived = async (e: MessageEvent) => {
