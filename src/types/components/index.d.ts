@@ -16,3 +16,5 @@ declare type TranscribingProps = {
 };
 
 declare type InformationTabs = "transcription" | "translation";
+
+declare type ProgressCallback = (data: { status: string; file?: string; progress?: number; loaded?: number; total?: number }) => void;
