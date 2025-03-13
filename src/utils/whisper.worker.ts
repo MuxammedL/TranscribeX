@@ -1,4 +1,4 @@
-import { MessageTypes } from "@/enum/MessageTypes";
+import { MessageTypes } from "./enum/MessageTypes";
 import {
   AudioInput,
   AutomaticSpeechRecognitionPipeline,
